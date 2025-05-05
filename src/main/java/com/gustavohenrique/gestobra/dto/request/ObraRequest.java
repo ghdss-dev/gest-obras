@@ -6,7 +6,7 @@ import lombok.Data;
 public class ObraRequest {
 
     private String nome;
-    private Long anoconstruacao;
+    private Integer anoconstrucao;
     private String coordenacao;
     private String gerencia;
     private String diretoria;

@@ -15,7 +15,7 @@ public class ObraResponse {
 
     private Integer id;
     private String nome;
-    private Integer anoconstruacao;
+    private Integer anoconstrucao;
     private String coordenacao;
     private String gerencia;
     private String diretoria;
@@ -27,7 +27,7 @@ public class ObraResponse {
         return ObraResponse.builder()
                 .id(obra.getId())
                 .nome(obra.getNome())
-                .anoconstruacao(obra.getAnoConstrucao())
+                .anoconstrucao(obra.getAnoconstrucao())
                 .coordenacao(obra.getCoordenacao())
                 .gerencia(obra.getGerencia())
                 .diretoria(obra.getDiretoria())

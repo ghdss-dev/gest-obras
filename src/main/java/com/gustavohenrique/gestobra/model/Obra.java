@@ -26,8 +26,8 @@ public class Obra {
     @Column(name = "nome", length = 45)
     private String nome;
 
-    @Column(name = "anoConstrucao")
-    private Integer anoConstrucao;
+    @Column(name = "anoconstrucao", length = 50)
+    private Integer anoconstrucao;
 
     @Column(name = "coordenacao", length = 45)
     private String coordenacao;
