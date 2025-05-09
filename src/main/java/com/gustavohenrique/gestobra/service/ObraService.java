@@ -34,10 +34,17 @@ public class ObraService {
 
     @Transactional
     public ObraResponse updateObra(ObraRequest request, Integer id) {
+        var obra = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Obra não encontrada"));
 
-        var obra = repository.findById(id).orElseThrow(() -> new RuntimeException("Obra not found"));
+        var localizacoes = obra.getLocalizacoes();
+        var detalhesTecnicos = obra.getObraDetalhesTecnicos();
 
-        BeanUtils.copyProperties(Obra.of(request), obra, "id");
+        BeanUtils.copyProperties(Obra.of(request), obra, "id", "localizacoes", "obraDetalhesTecnicos");
+
+        obra.setLocalizacoes(localizacoes);
+        obra.setObraDetalhesTecnicos(detalhesTecnicos);
+
         return ObraResponse.of(repository.save(obra));
     }
 

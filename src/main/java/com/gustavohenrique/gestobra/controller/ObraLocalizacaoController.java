@@ -40,7 +40,7 @@ public class ObraLocalizacaoController  {
         service.deletarObraLocalizacao(id);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ObraLocalizacaoResponse atualizarObrasLocalizacoes(@RequestBody ObraLocalizacaoRequest request, @PathVariable Integer id) {
 
         return service.atualizarObrasLocalizacoes(request, id);

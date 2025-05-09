@@ -47,6 +47,9 @@ public class Obra {
     @OneToMany(mappedBy = "obra", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ObraLocalizacao> localizacoes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "obra", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ObraDetalhesTecnicos> obraDetalhesTecnicos = new ArrayList<>();
+
     public static Obra of(ObraRequest request) {
 
         var obra = new Obra();

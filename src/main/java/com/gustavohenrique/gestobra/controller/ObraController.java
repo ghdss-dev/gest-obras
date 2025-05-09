@@ -37,4 +37,14 @@ public class ObraController {
 
         return service.buscarPorid(id);
     }
+
+    @PutMapping("/{id}")
+    public ObraResponse atualizarObra(@RequestBody ObraRequest request, @PathVariable Integer id) {
+        return service.updateObra(request, id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void remover(@PathVariable Integer id) {
+        service.removeObra(id);
+    }
 }
