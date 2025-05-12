@@ -9,6 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.BeanUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Builder
 @Data
 @Entity
@@ -37,6 +40,9 @@ public class ObraInspecao {
 
     @Column(name = "prioridade", length = 7)
     private Integer prioridade;
+
+    @OneToMany(mappedBy = "obraInspecao", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Inspecao> inspecaos = new ArrayList<>();
 
     public ObraInspecao(Integer id) {
 

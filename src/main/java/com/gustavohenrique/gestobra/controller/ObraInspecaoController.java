@@ -41,7 +41,7 @@ public class ObraInspecaoController {
         service.deletarObraInspecao(id);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ObraInspecaoResponse atualizarObrasInspecoes(@RequestBody ObraInspecaoRequest request, @PathVariable Integer id) {
 
         return service.atualizarObrasInspecoes(request, id);
